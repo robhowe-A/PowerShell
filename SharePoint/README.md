@@ -46,4 +46,26 @@ function getSPDatabase($outFilePath ) {
 getSPDatabase $outFilePath 
 Stop-Transcript
 ii $outFilePath
+
+# Transcript started, output file is C:\Users\spfarm\documents\SPDatabases.txt
+# ------------------------------------
+#         Content Databases: 
+# 
+# Name                                                         CurrentSiteCount
+# ----                                                         ----------------
+# SharePoint_AdminContent_d03512a5-d2fb-44c1-9508-0adc2cab1fb0                2
+# WSS_ContosoWeb_TEST2                                                        1
+# WSS_Web-DeveloperPublishing                                                 1
+# WSS_Content_20fa5da1c07e4aec8fb8998b75725dd1                                0
+# 
+# 
+# ------------------------------------
+#         Remaining Databases: 
+# 
+# Name                  Type                  
+# ----                  ----                  
+# SharePoint_Config_SSE Configuration Database
+# 
+# 
+# Transcript stopped, output file is C:\Users\spfarm\documents\SPDatabases.txt
 ```
