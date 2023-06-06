@@ -27,20 +27,25 @@ param(
     [string]$FilePath = "$($env:USERPROFILE)\documents\appPoolApplicationData.txt"
 )
 
-Start-Transcript $FilePath
-#loop through application pool name(s) of ingress parameter data
-foreach($appPool in $AppPoolNames){
-    #Friendly data output separates each config data set, per application pool
-    Write-Host "#####################################"
-    Write-Host "Application Pool: " -ForegroundColor DarkCyan -NoNewline
-    Write-Host "$($appPool)" -ForegroundColor Cyan
-    Write-Host "#####################################`n"
+Start-Transcript $FilePath #used for output file record
 
-    #Get IIS config data for the application
-    #Output set is a 'Microsoft.Web.Administration.ConfigurationElement' object type
-    Get-IISSite | `
-        Where-Object{$_.applications.ApplicationPoolName -match $appPool} | `
-        select -ExpandProperty applications
+function getApplicatoinConfigData($AppPoolNames){
+
+    #loop through application pool name(s) of ingress parameter data
+    foreach($appPool in $AppPoolNames){
+        #Friendly data output separates each config data set, per application pool
+        Write-Host "#####################################"
+        Write-Host "Application Pool: " -ForegroundColor DarkCyan -NoNewline
+        Write-Host "$($appPool)" -ForegroundColor Cyan
+        Write-Host "#####################################`n"
+
+        #Get IIS config data for the application
+        #The output set is a 'Microsoft.Web.Administration.ConfigurationElement' object type
+        Get-IISSite | `
+            Where-Object{$_.applications.ApplicationPoolName -match $appPool} | `
+            select -ExpandProperty applications
+    }
 }
+getApplicatoinConfigData $AppPoolNames
 Stop-Transcript
 ii $FilePath
