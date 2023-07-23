@@ -1,15 +1,30 @@
 ﻿<#
 #Title: newADUser+AddGroup.ps1
 Author: Robert Howell
-Description: This script creates a new  active directory user and 
-    adds "DeveloperPortal" security group membership
-Ex: 'CN=SharePoint User1,CN=Users,DC=hyperspace,DC=local'
-
+Description: This script is example code demonstrating the creation of active directory
+    users in bulk. It can be used when multiple accounts are needed created having similar attributes.
+    A For loop cycles the variable's values, creating unique user IDs sharing the same attributes. Single accounts
+    needing different attribute values are unaccounted for and need to be entered manually.
+        
 Parameters: 
--AD information is populated such as: city, dept, division, and title
--Multiple accounts may need added at once, with matching AD information
--The created accounts need to be manually enabled before they're allowed to log on
--All created accounts that are 'Communications Devs' are added to the "DeveloperPortal" group
+-This script adds the "DeveloperPortal" group permission to the account membership.
+
+Instructions:
+1. Confirm variables.
+    -The number of users and user attributes can be modified
+2. Begin the script. You will be prompted to enter a password, which will be the account's password from start.
+3. Monitor the output for progress and/or errors.
+
+Note:
+- Account numbers are added to the account name upon creation.
+    EX: First Name = sp, Last Name = user
+        RESULT: spuser1
+                spuser2
+                ...
+                spuser<n>
+- All passwords start as the same, so the accounts are disabled. It is expected each user to create
+    a new password when the account is activated.
+- AD information is populated such as: city, dept, division, and title
 
 #>
 $newusrcount = 100;
@@ -17,6 +32,10 @@ $city = "Naboo"
 $dept = "Separatists"
 $division = "Droid Army Communications"
 $title = "Communications Devs"
+$firstname = "sp"    #First Name attr. Used in combination with $lastname for the username
+$lastname = "user"
+$givenname = "SharePoint"    #used in Display Name
+$surname = "User"    #used in Display Name
 
 #do not use plain text password in production environment, the text may show up
 #in logs or events. use instead:
@@ -28,11 +47,11 @@ $userPassword = ConvertTo-SecureString "TwelvecharP@ssw0rd" -AsPlainText -Force
 #>
 
 for ($i=2; $i -le $newusrcount+1; $i++){
-    $fname = "sp"
-    $lname = "user$($i)"
+    $fname = "$firstname"
+    $lname = "$lastname$($i)"
     $name = "$($fname)$($lname)"
-    $gn = "SharePoint"
-    $sn = "User$($i)"
+    $gn = $givenname
+    $sn = "$surname$($i)"
     $upn = "$($name)@hyperspace.local"
     $displayName = "$($gn) $($sn)"
 
