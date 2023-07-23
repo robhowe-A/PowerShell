@@ -22,7 +22,7 @@ $title = "Communications Devs"
 #in logs or events. use instead:
 $userPassword = Read-Host -AsSecureString
 
-<#
+<# Uncomment to use hard coded password
 Write-Warning "You are about to use a password as plain text." -WarningAction Inquire
 $userPassword = ConvertTo-SecureString "TwelvecharP@ssw0rd" -AsPlainText -Force
 #>
