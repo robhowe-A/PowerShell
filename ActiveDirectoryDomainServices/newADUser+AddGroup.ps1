@@ -6,7 +6,7 @@ Description: This script is example code demonstrating the creation of active di
     A For loop cycles the variable's values, creating unique user IDs sharing the same attributes. Single accounts
     needing different attribute values are unaccounted for and need to be entered manually.
         
-Parameters: 
+Details: 
 -This script adds the "DeveloperPortal" group permission to the account membership.
 
     Instructions:
