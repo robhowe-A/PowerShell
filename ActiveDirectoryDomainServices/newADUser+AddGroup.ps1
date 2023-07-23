@@ -20,11 +20,11 @@ $title = "Communications Devs"
 
 #do not use plain text password in production environment, the text may show up
 #in logs or events. use instead:
-#    $nuPassword = Read-Host -AsSecureString
+$userPassword = Read-Host -AsSecureString
 
 <#
 Write-Warning "You are about to use a password as plain text." -WarningAction Inquire
-$nuPassword = ConvertTo-SecureString "TwelvecharP@ssw0rd" -AsPlainText -Force
+$userPassword = ConvertTo-SecureString "TwelvecharP@ssw0rd" -AsPlainText -Force
 #>
 
 for ($i=2; $i -le $newusrcount+1; $i++){
@@ -46,7 +46,7 @@ for ($i=2; $i -le $newusrcount+1; $i++){
             -GivenName $gn `
             -Surname $sn `
             -UserPrincipalName $upn `
-            -AccountPassword $nuPassword `
+            -AccountPassword $userPassword `
             -ChangePasswordAtLogon $false `
             -City $city `
             -Department $dept `
