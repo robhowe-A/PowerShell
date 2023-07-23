@@ -1,4 +1,4 @@
-﻿<#
+<#
 Title: newADUser+AddGroup.ps1
 Author: Robert Howell
 Description: This script is example code demonstrating the creation of active directory
@@ -9,22 +9,22 @@ Description: This script is example code demonstrating the creation of active di
 Parameters: 
 -This script adds the "DeveloperPortal" group permission to the account membership.
 
-Instructions:
-1. Confirm variables.
-    -The number of users and user attributes can be modified
-2. Begin the script. You will be prompted to enter a password, which will be the account's password from start.
-3. Monitor the output for progress and/or errors.
-
-Note:
-- Account numbers are added to the account name upon creation.
-    EX: First Name = sp, Last Name = user
-        RESULT: spuser1
-                spuser2
-                ...
-                spuser<n>
-- All passwords start as the same, so the accounts are disabled. It is expected each user to create
-    a new password when the account is activated.
-- AD information is populated such as: city, dept, division, and title
+    Instructions:
+    1. Confirm variables.
+        -The number of users and user attributes can be modified
+    2. Begin the script. You will be prompted to enter a password, which will be the account's password from start.
+    3. Monitor the output for progress and/or errors.
+    
+    Notes:
+    - Account numbers are added to the account name upon creation.
+        EX: First Name = sp, Last Name = user
+            RESULT: spuser1
+                    spuser2
+                    ...
+                    spuser<n>
+    - All passwords start as the same, so the accounts are disabled. It is expected each user to create
+        a new password when the account is activated.
+    - AD information is populated such as: city, dept, division, and title
 
 #>
 $newusrcount = 100;
@@ -33,9 +33,9 @@ $dept = "Separatists"
 $division = "Droid Army Communications"
 $title = "Communications Devs"
 $firstname = "sp"    #First Name. Used in combination with $lastname for the username
-$lastname = "user"
+$lastname = "designer"
 $givenname = "SharePoint"    #used in Display Name
-$surname = "User"    #used in Display Name
+$surname = "Designer"    #used in Display Name
 
 #do not use plain text password in production environment, the text may show up
 #in logs or events. This default (uncommented) value is prompted upon script run:
