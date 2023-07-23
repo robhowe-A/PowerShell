@@ -1,5 +1,5 @@
 ﻿<#
-#Title: newADUser+AddGroup.ps1
+Title: newADUser+AddGroup.ps1
 Author: Robert Howell
 Description: This script is example code demonstrating the creation of active directory
     users in bulk. It can be used when multiple accounts are needed created having similar attributes.
@@ -32,13 +32,13 @@ $city = "Naboo"
 $dept = "Separatists"
 $division = "Droid Army Communications"
 $title = "Communications Devs"
-$firstname = "sp"    #First Name attr. Used in combination with $lastname for the username
+$firstname = "sp"    #First Name. Used in combination with $lastname for the username
 $lastname = "user"
 $givenname = "SharePoint"    #used in Display Name
 $surname = "User"    #used in Display Name
 
 #do not use plain text password in production environment, the text may show up
-#in logs or events. use instead:
+#in logs or events. This default (uncommented) value is prompted upon script run:
 $userPassword = Read-Host -AsSecureString
 
 <# Uncomment to use hard coded password
