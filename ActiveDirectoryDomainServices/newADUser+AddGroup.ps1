@@ -6,8 +6,7 @@ Description: This script creates a new  active directory user and
 Ex: 'CN=SharePoint User1,CN=Users,DC=hyperspace,DC=local'
 
 Parameters: 
--The account is created new from blank
--The account is created with populated AD information: city, dept, division, and title
+-AD information is populated such as: city, dept, division, and title
 -Multiple accounts may need added at once, with matching AD information
 -The created accounts need to be manually enabled before they're allowed to log on
 -All created accounts that are 'Communications Devs' are added to the "DeveloperPortal" group
