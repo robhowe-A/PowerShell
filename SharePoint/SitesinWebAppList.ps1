@@ -1,5 +1,11 @@
-﻿##########################################
-#list web applications and the site URLs
+﻿<#
+#Description: This script outputs SharePoint Server web application properties
+#Author: Robert Howell
+#Date: 09/2024
+#Notes: 
+    -list web applications and the site URLs
+    -list each site collection url in the web application
+#>
 $was = Get-SPWebApplications
 if ($was -ne $null) {
     #list each web application and the name

@@ -1,4 +1,9 @@
-﻿Add-PSSnapin *Microsoft.SharePoint.PowerShell* -ErrorAction SilentlyContinue
+﻿<#
+#Description: This script outputs SharePoint Server services online status
+#Author: Robert Howell
+#Date: 09/2024
+#>
+Add-PSSnapin *Microsoft.SharePoint.PowerShell* -ErrorAction SilentlyContinue
 
 function checkSPServices(){
     $services = Get-SPService

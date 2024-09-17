@@ -1,4 +1,11 @@
-﻿$sites = get-spsite
+﻿<#
+#Description: This script outputs SharePoint Server web properties
+#Author: Robert Howell
+#Date: 09/2024
+#Notes: 
+    -get list properties of sharepoint websites:
+#>
+$sites = get-spsite
 $sites.AllWebs
 
 $web = get-spweb http://sharepoint.hyperspace.local:34881  

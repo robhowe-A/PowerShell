@@ -28,10 +28,8 @@ PS C:\...\Desktop\PowerShell> .\SharePoint.NewWebApplication.ps1
     ApplicationPool: Developer-5001
     PoolAccount: HYPERSPACE\spfarm
     DatabaseName: WSS_Web-Developer
-
 #>
-#Parameter validation.
-#Use this script or CA-UI to create a web application.
+#Parameter validation
 param(
     [Parameter(
         Mandatory=$true,

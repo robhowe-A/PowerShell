@@ -1,4 +1,9 @@
-﻿Add-PSSnapin *Microsoft.SharePoint.PowerShell* -ErrorAction SilentlyContinue
+﻿<#
+#Description: This script writes SharePoint Server database properties output to text file
+#Author: Robert Howell
+#Date: 09/2024
+#>
+Add-PSSnapin *Microsoft.SharePoint.PowerShell* -ErrorAction SilentlyContinue
 $outFilePath = "$($env:USERPROFILE)\documents\SPDatabases.txt"
 
 Start-Transcript -Path $outFilePath

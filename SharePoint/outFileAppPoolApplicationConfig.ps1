@@ -1,6 +1,7 @@
 ﻿<#
-#Description: This script outputs configuration details of the applications running in a selected app pool
+#Description: This script writes configuration details of the applications running in a selected app pool to an output file
 #Author: Robert Howell
+#Date: 09/2024
 #Parameters: 
     -$AppPoolNames - Taking in a commma separated array of app pool names
     -$FilePath - The output file path
@@ -8,7 +9,6 @@
     #EX: 
         PS PowerShell> $AppPoolNames = @('DefaultAppPool', 'Developer-5001')
         PS PowerShell> .\outFileAppPoolApplicationConfig.ps1 -AppPoolNames $AppPoolNames -FilePath "C:\Users\spfarm\Documents\SharePoint_Data\ApplicationsConfig.txt"
-
 #>
 param(
     [Parameter(

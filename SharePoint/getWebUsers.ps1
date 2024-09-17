@@ -1,5 +1,11 @@
-﻿Add-PSSnapin *Microsoft.SharePoint.PowerShell*
-#get the users of sharepoint website:
+﻿<#
+#Description: This script writes SharePoint Server user properties to output text file
+#Author: Robert Howell
+#Date: 09/2024
+#Notes: 
+    -get the users of sharepoint website:
+#>
+Add-PSSnapin *Microsoft.SharePoint.PowerShell*
 $url = "http://developer.hyperspace.local:5001"
 
 #set the output file path

@@ -1,4 +1,9 @@
-﻿$outFile = "$($env:USERPROFILE)\documents\localAccount+Groups.txt"
+﻿<#
+#Description: This script outputs group members key to SharePoint Server
+#Author: Robert Howell
+#Date: 09/2024
+#>
+$outFile = "$($env:USERPROFILE)\documents\localAccount+Groups.txt"
 Start-Transcript -Path $outFile
 
 #Key SharePoint local groups and group members

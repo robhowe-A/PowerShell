@@ -1,4 +1,11 @@
-﻿#function variables
+﻿<#
+#Description: This script writes SharePoint Server STS certificate properties to output file
+#Author: Robert Howell
+#Date: 09/2024
+#Notes: 
+    -output STS properties
+#>
+#function variables
 $searchPath = "Cert:\LocalMachine"
 $certDataOutFilePath = "$([System.Environment]::GetEnvironmentVariable("USERPROFILE").toString())\documents\STScertdata.txt"
 
