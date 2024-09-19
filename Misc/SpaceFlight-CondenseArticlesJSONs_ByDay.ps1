@@ -1,3 +1,9 @@
+<#
+#Description: This script uses a regex filter for a custom project of mine. Complex string 
+    manipulations combined json files by day into an aggregate file.
+#Author: Robert Howell
+#Date: 09/2024
+#>
 $path = "C:\GitHub\Repositories-Files\PowerShell\Misc\FileStore_Test"
 
 #######################MARCH############################
