@@ -1,4 +1,8 @@
-
+<#
+#Description: This script outputs file information properties  
+#Author: Robert Howell
+#Date: 09/2024
+#>
 $files = Get-ChildItem -Path "C:\inetpub\wwwroot\Spaceflight news deploy\"
 $resultlist = New-Object -TypeName System.Collections.ArrayList
 foreach ($file in $files) {
