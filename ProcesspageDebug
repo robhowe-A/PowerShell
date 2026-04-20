@@ -1,4 +1,4 @@
-﻿<#
+<#
 #Description: This script writes finds a process name and dumps an error
 #Author: Robert Howell
 #Date: 4/20/2026
@@ -7,12 +7,10 @@
 #>
 
 $projectName= "ProjectsPage";
-$once = $True;
 
 function ProcessRunDump {
 param(
-    [string] $processName = "",
-    [bool] $once = $True
+    [string] $processName = ""
 )
     Write-Host "Listening for process: $processName"
 
@@ -23,9 +21,8 @@ param(
             Write-Host "$(Get-Date) - Process '$processName' is RUNNING (PID: $($proc.Id))"
             $str = [string]::Format("-ma {0} -e 1" -f $proc.Id)
 
-            if($once) {
+            if((Get-Process | ?{$_.ProcessName -like 'procdump*'}).Count -eq 0) {
                 Start-Process -FilePath "C:\temp\Procdump\procdump.exe" -ArgumentList $str -NoNewWindow
-                $once = $False;
             }
 
         }
@@ -36,4 +33,4 @@ param(
         Start-Sleep -Seconds 2
     }
 }
-Show-Calendar $projectName $once
+ProcessRunDump $projectName $once
